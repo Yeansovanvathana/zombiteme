@@ -5,14 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float moveSpeed, dirX, dirY;
+    private float dirX, dirY;
+    public float moveSpeed = 6f;
 
     public bool ClimbingAllowed { get; set; }
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        moveSpeed = 8f;
     }
 
     // Update is called once per frame
