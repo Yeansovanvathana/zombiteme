@@ -5,13 +5,20 @@ using UnityEngine;
 public class AIPatrol : MonoBehaviour
 {
     public float walkspeed;
+
+    [HideInInspector]
     public bool mustPatrol;
+    private bool mustTurn;
+    
     public Rigidbody2D rb;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
     
  
     void Start()
     {
         mustPatrol = true;
+        Patrol();
     }
 
     // Update is called once per frame
@@ -23,8 +30,20 @@ public class AIPatrol : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if(mustTurn)
+        {
+            mustTurn = !Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        }
+    }
+
     void Patrol()
     {
+        if (mustTurn)
+        {
+            Flip();
+        }
         rb.velocity = new Vector2(walkspeed * Time.fixedDeltaTime, rb.velocity.y);
     }
 
