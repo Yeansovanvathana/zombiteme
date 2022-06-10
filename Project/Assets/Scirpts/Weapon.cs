@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Weapon : MonoBehaviour
 {
@@ -12,13 +13,13 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (CrossPlatformInputManager.GetButtonDown("Fire1"))
         {
             Shoot();
             animator.SetBool("Shooting", true);
         
         }
-        else if(Input.GetButtonUp("Fire1"))
+        else if(CrossPlatformInputManager.GetButtonUp("Fire1"))
         {
             Shoot();
             animator.SetBool("Shooting", false);

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float dirX, dirY;
-    public float moveSpeed = 6f;
+    public float moveSpeed = 5f;
 
     public bool ClimbingAllowed { get; set; }
     // Start is called before the first frame update
@@ -18,10 +19,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dirX = Input.GetAxis("Horizontal") * moveSpeed;
+        dirX = CrossPlatformInputManager.GetAxis("Horizontal") * moveSpeed;
         if (ClimbingAllowed)
         {
-            dirY = Input.GetAxis("Vertical") * moveSpeed;
+            dirY = Input.GetAxis("Vertical") * moveSpeed;         
         }
     }
     private void FixedUpdate()
