@@ -27,13 +27,13 @@ public class PlayerMovement : MonoBehaviour {
 			animator.SetBool("IsJumping", true);
 		}
 
-		if (CrossPlatformInputManager.GetButtonDown("cruch"))
+		if (CrossPlatformInputManager.GetAxis("Vertical") < 0)
 		{
 			crouch = true;
 			animator.SetBool("IsCrouching", true);
 
 		}
-		else if (CrossPlatformInputManager.GetButtonUp("cruch"))
+		else 
 		{
 			crouch = false;
 			animator.SetBool("IsCrouching", false);
@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour {
     {
 		animator.SetBool("IsJumping", false);
     }
+
 
 
 
