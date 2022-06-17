@@ -1059,7 +1059,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2268,7 +2268,7 @@ RectTransform:
   m_GameObject: {fileID: 2071000980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.2684073, y: 3.2684073, z: 3.2684073}
+  m_LocalScale: {x: 4.0194874, y: 4.0194874, z: 4.0194874}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1243329083}
